@@ -1,0 +1,33 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Program194
+{
+    internal class Program
+    {
+        static void Main()
+        {
+
+            Console.Write("Фаза Луны (1—Новолуние, 2—Первая четверть, 3—Полнолуние, 4—Последняя четверть): ");
+            if (!int.TryParse(Console.ReadLine(), out int phase) || phase < 1 || phase > 4)
+            {
+                Console.WriteLine("Ошибка.");
+                return;
+            }
+
+            string desc;
+            switch (phase)
+            {
+                case 1: desc = "Новолуние: Луна не видна, освещённая сторона обращена от Земли."; break;
+                case 2: desc = "Первая четверть: видна правая половина диска, рост освещённости."; break;
+                case 3: desc = "Полнолуние: диск полностью освещён, Луна видна всю ночь."; break;
+                case 4: desc = "Последняя четверть: видна левая половина диска, убывание освещённости."; break;
+                default: return;
+            }
+            Console.WriteLine(desc);
+        }
+    }
+}
